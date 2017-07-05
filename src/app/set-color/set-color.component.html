@@ -1,0 +1,10 @@
+<md-card-content>
+    <md-card-title>Set Color</md-card-title>
+    <div class="box" [style.backgroundColor]="color">
+        {{ color }}
+    </div>
+    <button md-button md-raised-button (click)="setColor('#FF5252')">Red</button>
+    <button md-button md-raised-button (click)="setColor('#FFEB3B')">yellow</button>
+    <button md-button md-raised-button (click)="setColor('#FF4081')">Pink</button>
+    <button md-button md-raised-button (click)="setColor('#E040FB')">Purple</button>
+</md-card-content>

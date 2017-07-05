@@ -1,15 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { environment } from '../environments/environment';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { SetColorModule } from 'app/set-color/set-color.module';
+import { SetColorRoutingModule } from './set-color-routing.module';
+import { SetColorComponent } from 'app/set-color/set-color.component';
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -61,21 +54,13 @@ export const MaterialModules = [
   MdToolbarModule,
   MdTooltipModule,
 ];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundComponent
-  ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     MaterialModules,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    SetColorModule,
-    AppRoutingModule
+    SetColorRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ SetColorComponent ]
 })
-export class AppModule { }
+export class SetColorModule { }

@@ -3,18 +3,9 @@
     <span class="spacer"></span>
     <a routerLink="" md-button>About</a>
     <a routerLink="" md-button>Contact</a>
+    <a routerLink="quotes" routerLinkActive="active" md-button>Movie Quotes</a>
 </md-toolbar>
 
 <md-card class="container">
-    <md-card-content>
-        <md-card-title>Set Color</md-card-title>
-        <div class="box" [style.backgroundColor]="color">
-            {{ color }}
-        </div>
-        <button md-button md-raised-button (click)="setColor('#FF5252')">Red</button>
-        <button md-button md-raised-button (click)="setColor('#FFEB3B')">yellow</button>
-        <button md-button md-raised-button (click)="setColor('#FF4081')">Pink</button>
-        <button md-button md-raised-button (click)="setColor('#E040FB')">Purple</button>
-    </md-card-content>
     <router-outlet></router-outlet>
 </md-card>
