@@ -7,7 +7,14 @@
 
 <md-card class="container">
     <md-card-content>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique excepturi est sapiente ea voluptas ipsum modi quis, dolores eos itaque nobis nam aspernatur ad facilis animi incidunt adipisci error quod.</p>
+        <md-card-title>Set Color</md-card-title>
+        <div class="box" [style.backgroundColor]="color">
+            {{ color }}
+        </div>
+        <button md-button md-raised-button (click)="setColor('#FF5252')">Red</button>
+        <button md-button md-raised-button (click)="setColor('#FFEB3B')">yellow</button>
+        <button md-button md-raised-button (click)="setColor('#FF4081')">Pink</button>
+        <button md-button md-raised-button (click)="setColor('#E040FB')">Purple</button>
     </md-card-content>
     <router-outlet></router-outlet>
 </md-card>
