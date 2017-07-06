@@ -1,3 +1,46 @@
-<p>
-  movie-quote works!
-</p>
+<md-card-title>
+    Movie Quote
+</md-card-title>
+<md-card-content>
+    <form class="full-width" #movieQuoteForm="ngForm" (submit)="submitMovieQuoteForm(movieQuoteForm)" *ngIf="!isResetting">
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Movie Name" name="movie" [(ngModel)]="movieQuoteFormData.movie" required>
+        </md-input-container>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Quote" name="quote" [(ngModel)]="movieQuoteFormData.quote" required>
+        </md-input-container>
+        <button type="submit" md-button md-raised-button color="accent" [disabled]="movieQuoteForm.invalid">{{
+            movieQuoteFormData.$key ? 'Update Quote': 'Add Quote'
+          }}</button>
+    </form>
+</md-card-content>
+
+
+<hr>
+
+<md-card-title>
+    Movie Quote List
+</md-card-title>
+<md-card-content>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Movie Name</th>
+                <th>Quote</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quote of movieQuotesStream | async">
+                <td>{{ quote.$key }}</td>
+                <td>{{ quote.movie }}</td>
+                <td>{{ quote.quote }}</td>
+                <td>
+                    <i class="material-icons" (click)="editQuote(quote)">mode_edit</i>
+                    <i class="material-icons" (click)="removeQuote(quote)">delete</i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</md-card-content>

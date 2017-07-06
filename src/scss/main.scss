@@ -18,7 +18,7 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 @include angular-material-theme($candy-app-theme);
 // @import 'theme/theme';
 // @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
-// @import '~material-design-icons/iconfont/material-icons.css';
+@import '~material-design-icons/iconfont/material-icons.css';
 // @import 'components/icons';
 // .spacer{
 // 	flex: 1 1 auto;

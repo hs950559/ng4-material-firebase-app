@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../../environments/environment';
+
 import { MovieQuoteRoutingModule } from './movie-quote-routing.module';
 import { MovieQuoteComponent } from './movie-quote.component';
+import { FormsModule } from '@angular/forms';
 
 import {
   MdAutocompleteModule,
@@ -59,7 +64,10 @@ export const MaterialModules = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MaterialModules,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     MovieQuoteRoutingModule
   ],
   declarations: [MovieQuoteComponent]
