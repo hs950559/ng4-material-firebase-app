@@ -1,9 +1,16 @@
 <md-toolbar color="primary">
     <span>Angular App</span>
-    <span class="spacer"></span>
+    <span fxFlex></span>
     <a routerLink="" md-button>About</a>
     <a routerLink="" md-button>Contact</a>
-    <a routerLink="quotes" routerLinkActive="active" md-button>Movie Quotes</a>
+    <button md-icon-button [mdMenuTriggerFor]="apps">
+      <md-icon>more_vert</md-icon>
+    </button>
+
+    <md-menu [overlapTrigger]="false" #apps="mdMenu">
+        <button md-menu-item routerLink="quotes" routerLinkActive="active">Movie Quotes</button>
+        <button md-menu-item routerLink="password-manager" routerLinkActive="active">Password Manager</button>
+    </md-menu>
 </md-toolbar>
 
 <md-card class="container">

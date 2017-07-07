@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: 'app/movie-quote/movie-quote.module#MovieQuoteModule'
   },
   {
+    path: 'password-manager',
+    loadChildren: 'app/password-manager/password-manager.module#PasswordManagerModule'
+  },
+  {
     path: '',
     redirectTo: '/set-color',
     pathMatch: 'full'

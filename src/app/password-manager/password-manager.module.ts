@@ -1,16 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { environment } from '../environments/environment';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PasswordManagerRoutingModule } from './password-manager-routing.module';
+import { PasswordManagerComponent } from './password-manager.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { SetColorModule } from 'app/set-color/set-color.module';
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -62,22 +56,14 @@ export const MaterialModules = [
   MdToolbarModule,
   MdTooltipModule,
 ];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundComponent
-  ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     MaterialModules,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    SetColorModule,
-    AppRoutingModule
+    PasswordManagerRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [PasswordManagerComponent]
 })
-export class AppModule { }
+export class PasswordManagerModule { }
